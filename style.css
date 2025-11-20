@@ -3,119 +3,212 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
-
 }
 
-
+/* ============ GLOBAL ============ */
 body{
     background-color: rgb(89, 90, 106);
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-start;
+    padding: 16px;
 }
 
+/* ============ CONTAINER ============ */
 .container{
     display: flex;
     flex-direction: column;
     gap: 1rem;
     background-color: rgb(69, 64, 64);
-    padding: 20px;
-    border-radius: 5px;
-    width: 50%;
-    max-width: 600px;
-
+    padding: 16px 16px 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 480px;       /* mobile-friendly width */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 h1{
-    font-size: 2rem;
-
+    font-size: 1.6rem;
+    line-height: 1.2;
+    text-align: center;
 }
+
+/* optional: if you added api-warning div inline, this will make it nicer */
+.api-warning{
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+/* ============ USER INPUT AREA ============ */
 
 .user-container{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    justify-content: start;
+    justify-content: flex-start;
+    margin-top: 4px;
+}
+
+.user-container p{
+    font-size: 0.9rem;
 }
 
 .user-input-container{
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
 }
 
 #user-input{
-    width: 80%;
-    padding: 0.4rem;
+    flex: 1;
+    padding: 0.45rem 0.6rem;
     border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
 }
 
 #search-btn{
-    padding: 0.4rem;
+    padding: 0.45rem 0.8rem;
     border-radius: 5px;
     background-color: rgb(89, 90, 106);
     color: white;
-    /* border: none; */
-    /* cursor: pointer; */
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
 
+#search-btn:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ============ PROGRESS CIRCLES ============ */
+
 .circle{
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 4px solid #299f5d;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    columns: white;
+    font-size: 14px;
+    color: white;
     font-weight: 700;
     background: conic-gradient(#299f5d var(--progress-degree, 0%), #283a2e 0%);
     flex-direction: column;
-    /* Important Part */
 }
 
 .circle span{
     position: relative;
     z-index: 2;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.circle p{
+    font-size: 0.8rem;
+    opacity: 0.85;
 }
 
 .progress{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
 }
 
+.progress-item{
+    display: flex;
+    justify-content: center;
+}
+
+/* ============ STATS CARDS ============ */
+
 .stars-card{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 h4{
-    font-size: 1rem;
-    
-    
+    font-size: 0.9rem;
+    margin-bottom: 4px;
 }
-
 
 .card{
     background-color: #283a2e;
-    width: 40%;
-    max-width: 290px;
+    width: 100%;
+    max-width: 100%;
     padding: 10px;
     border-radius: 10px;
-    font-size: 1rem;
-    min-height: 4rem;
+    font-size: 0.9rem;
+    min-height: 3.2rem;
+}
 
-    
+/* ============ RESPONSIVE: TABLET & DESKTOP ============ */
 
+@media (min-width: 600px){
+    body{
+        align-items: center;
+        padding: 24px;
+    }
+
+    .container{
+        max-width: 650px;
+        padding: 20px 24px 24px;
+    }
+
+    h1{
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .user-container p{
+        font-size: 1rem;
+    }
+
+    .card{
+        width: 45%;          /* 2 cards per row on bigger screens */
+        max-width: 260px;
+    }
+
+    .circle{
+        width: 120px;
+        height: 120px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px){
+    /* very small phones */
+    .container{
+        padding: 12px 10px 16px;
+        border-radius: 6px;
+    }
+
+    .user-input-container{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search-btn{
+        width: 100%;
+        text-align: center;
+    }
+
+    .circle{
+        width: 100px;
+        height: 100px;
+        font-size: 13px;
+    }
 }
