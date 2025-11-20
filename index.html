@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetStat – A LeetCode Stats Tracker!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <!--Heding
+        user
+        starts  -->
+
+      <h1>LeetCode Stats Tracker</h1>
+
+
+
+
+      <div
+        class="api-warning"
+        style="
+          background: #51a174;
+          color: black;
+          padding: 10px;
+          font-size: 14px;
+          border-radius: 5px;
+        "
+        >
+        ⚠️ <b>IMPORTANT</b>: Before using this tool, please open this link once and
+        <b>enable demo server</b>:<br />
+        <a
+          href="https://cors-anywhere.herokuapp.com/corsdemo"
+          target="_blank"
+          style="color: blue; font-weight: bold","font-weight: bold; text-decoration: underline"
+        >
+          https://cors-anywhere.herokuapp.com/corsdemo </a
+        ><br />
+        <b>Then you can use the search option below.</b>
+      </div>
+
+
+
+
+      <div class="user-container">
+        <p>Enter your username below :</p>
+        <div class="user-input-container">
+          <input
+            type="text"
+            placeholder="enter your username here"
+            id="user-input"
+          />
+          <button id="search-btn">Search</button>
+        </div>
+      </div>
+
+      <div class="stars-container">
+        <div class="progress">
+          <div class="progress-item">
+            <div class="easy-progress circle">
+              <span id="easy-label"></span>
+              <p>Easy</p>
+            </div>
+          </div>
+
+          <div class="progress-item">
+            <div class="medium-progress circle">
+              <span id="medium-label"></span>
+              <p>Medium</p>
+            </div>
+          </div>
+
+          <div class="progress-item">
+            <div class="hard-progress circle">
+              <span id="hard-label"></span>
+              <p>Hard</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stars-card">
+          <!-- direct populate card here from the JS code -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
